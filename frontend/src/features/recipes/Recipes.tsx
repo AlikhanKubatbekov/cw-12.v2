@@ -28,6 +28,7 @@ const Recipes = () => {
               author={recipe.user.displayName}
               authorId={recipe.user._id}
               title={recipe.title}
+              recipe={recipe.recipe}
               image={recipe.image}
             />
           ))}

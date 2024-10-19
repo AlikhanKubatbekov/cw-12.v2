@@ -32,7 +32,14 @@ const AuthorRecipes = () => {
       recipes = (
         <Grid container spacing={4} marginBottom="40px">
           {recipesByAuthor.map((recipe) => (
-            <AuthorRecipeItem key={recipe._id} _id={recipe._id} authorId={id} title={recipe.title} image={recipe.image} />
+            <AuthorRecipeItem
+              key={recipe._id}
+              _id={recipe._id}
+              authorId={id}
+              title={recipe.title}
+              recipe={recipe.recipe}
+              image={recipe.image}
+            />
           ))}
         </Grid>
       );

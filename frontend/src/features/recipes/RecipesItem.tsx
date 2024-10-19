@@ -14,6 +14,7 @@ interface Props {
   authorId: string;
   author: string;
   title: string;
+  recipe: string;
   image: string | null;
 }
 
@@ -25,7 +26,7 @@ const ImageCardMedia = styled(CardMedia)({
   },
 });
 
-const RecipesItem: React.FC<Props> = ({ _id, authorId, author, title, image }) => {
+const RecipesItem: React.FC<Props> = ({ _id, authorId, author, title, recipe, image }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const dispatch = useAppDispatch();
@@ -39,7 +40,14 @@ const RecipesItem: React.FC<Props> = ({ _id, authorId, author, title, image }) =
 
   return (
     <>
-      <ModalPhoto image={cardImage} openModal={openModal} handleClose={handleCloseModal} alt={title} />
+      <ModalPhoto
+        image={cardImage}
+        title={title}
+        recipe={recipe}
+        openModal={openModal}
+        handleClose={handleCloseModal}
+        alt={title}
+      />
       <Grid item xs={12} sm={6} md={3}>
         <Card
           style={{
