@@ -3,12 +3,13 @@ import Layout from './components/UI/Layout/Layout';
 import { Typography } from '@mui/material';
 import Register from './features/users/Register';
 import Login from './features/users/Login';
+import Recipes from './features/recipes/Recipes';
 
 const App = () => {
   return (
     <Layout>
       <Routes>
-        {/*<Route path="/" element={<Photos />} />*/}
+        <Route path="/" element={<Recipes />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         {/*<Route path="/users/:id" element={<AuthorPhotos />} />*/}

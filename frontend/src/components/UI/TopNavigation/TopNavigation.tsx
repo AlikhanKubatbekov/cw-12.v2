@@ -9,13 +9,13 @@ import { Link } from 'react-router-dom';
 import { theme } from '../../../constants';
 import MenuIcon from '@mui/icons-material/Menu';
 import SideDrawer from './SideDrawer';
-// import {
-//   selectCreatePhotoLoading,
-//   selectFetchAuthorLoading,
-//   selectPhotosByAuthorFetchLoading,
-//   selectPhotosFetchLoading,
-//   selectRemovePhotoLoading,
-// } from '../../../features/photos/photosSlice';
+import {
+  selectCreateRecipeLoading,
+  selectFetchAuthorLoading,
+  selectRecipesByAuthorFetchLoading,
+  selectRecipesFetchLoading,
+  selectRemoveRecipeLoading,
+} from '../../../features/recipes/recipesSlice';
 
 const TopNavigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -28,11 +28,11 @@ const TopNavigation = () => {
   const user = useAppSelector(selectUser);
   const registerLoading = useAppSelector(selectRegisterLoading);
   const loginLoading = useAppSelector(selectLoginLoading);
-  // const fetchAllPhotosLoading = useAppSelector(selectPhotosFetchLoading);
-  // const fetchPhotosByAuthorLoading = useAppSelector(selectPhotosByAuthorFetchLoading);
-  // const fetchAuthorByPhotoLoading = useAppSelector(selectFetchAuthorLoading);
-  // const removePhotoLoading = useAppSelector(selectRemovePhotoLoading);
-  // const createPhotoLoading = useAppSelector(selectCreatePhotoLoading);
+  const fetchAllPhotosLoading = useAppSelector(selectRecipesFetchLoading);
+  const fetchPhotosByAuthorLoading = useAppSelector(selectRecipesByAuthorFetchLoading);
+  const fetchAuthorByPhotoLoading = useAppSelector(selectFetchAuthorLoading);
+  const removePhotoLoading = useAppSelector(selectRemoveRecipeLoading);
+  const createPhotoLoading = useAppSelector(selectCreateRecipeLoading);
 
   const loadingBox = (
     <Box width="100%">
@@ -99,10 +99,10 @@ const TopNavigation = () => {
       </Container>
       {registerLoading && loadingBox}
       {loginLoading && loadingBox}
-      {/*{fetchAllPhotosLoading && loadingBox}*/}
-      {/*{(fetchPhotosByAuthorLoading || fetchAuthorByPhotoLoading) && loadingBox}*/}
-      {/*{removePhotoLoading && loadingBox}*/}
-      {/*{createPhotoLoading && loadingBox}*/}
+      {fetchAllPhotosLoading && loadingBox}
+      {(fetchPhotosByAuthorLoading || fetchAuthorByPhotoLoading) && loadingBox}
+      {removePhotoLoading && loadingBox}
+      {createPhotoLoading && loadingBox}
     </AppBar>
   );
 };

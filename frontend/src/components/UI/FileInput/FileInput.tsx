@@ -2,7 +2,8 @@ import React, { useRef, useState } from 'react';
 import { Button, Grid, TextField } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
-// import { selectCreatePhotoError } from '../../../features/photos/photosSlice';
+import { selectCreateRecipeError } from '../../../features/recipes/recipesSlice';
+import { useAppSelector } from '../../../app/hooks';
 
 interface Props {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -12,7 +13,7 @@ interface Props {
 
 const FileInput: React.FC<Props> = ({ onChange, name, label }) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  // const createError = useAppSelector(selectCreatePhotoError);
+  const createError = useAppSelector(selectCreateRecipeError);
 
   const [filename, setFilename] = useState('');
 
@@ -32,13 +33,13 @@ const FileInput: React.FC<Props> = ({ onChange, name, label }) => {
     }
   };
 
-  // const getFieldError = (fieldName: string) => {
-  //   try {
-  //     return createError?.errors[fieldName].message;
-  //   } catch {
-  //     return undefined;
-  //   }
-  // };
+  const getFieldError = (fieldName: string) => {
+    try {
+      return createError?.errors[fieldName].message;
+    } catch {
+      return undefined;
+    }
+  };
 
   return (
     <>
@@ -51,8 +52,8 @@ const FileInput: React.FC<Props> = ({ onChange, name, label }) => {
             label={label}
             value={filename}
             onClick={activateInput}
-            // error={Boolean(getFieldError('image'))}
-            // helperText={getFieldError('image')}
+            error={Boolean(getFieldError('image'))}
+            helperText={getFieldError('image')}
           />
         </Grid>
         <Grid item>

@@ -39,3 +39,15 @@ export interface ValidationError {
 export interface GlobalError {
   error: string;
 }
+
+export interface Recipe {
+  _id: string;
+  user: User;
+  title: string;
+  image: string;
+}
+
+export interface RecipeMutation {
+  title: string;
+  image: File | null;
+}
