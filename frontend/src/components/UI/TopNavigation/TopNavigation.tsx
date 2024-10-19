@@ -28,11 +28,11 @@ const TopNavigation = () => {
   const user = useAppSelector(selectUser);
   const registerLoading = useAppSelector(selectRegisterLoading);
   const loginLoading = useAppSelector(selectLoginLoading);
-  const fetchAllPhotosLoading = useAppSelector(selectRecipesFetchLoading);
-  const fetchPhotosByAuthorLoading = useAppSelector(selectRecipesByAuthorFetchLoading);
-  const fetchAuthorByPhotoLoading = useAppSelector(selectFetchAuthorLoading);
-  const removePhotoLoading = useAppSelector(selectRemoveRecipeLoading);
-  const createPhotoLoading = useAppSelector(selectCreateRecipeLoading);
+  const fetchAllRecipesLoading = useAppSelector(selectRecipesFetchLoading);
+  const fetchRecipesByAuthorLoading = useAppSelector(selectRecipesByAuthorFetchLoading);
+  const fetchAuthorByRecipeLoading = useAppSelector(selectFetchAuthorLoading);
+  const removeRecipeLoading = useAppSelector(selectRemoveRecipeLoading);
+  const createRecipeLoading = useAppSelector(selectCreateRecipeLoading);
 
   const loadingBox = (
     <Box width="100%">
@@ -99,10 +99,10 @@ const TopNavigation = () => {
       </Container>
       {registerLoading && loadingBox}
       {loginLoading && loadingBox}
-      {fetchAllPhotosLoading && loadingBox}
-      {(fetchPhotosByAuthorLoading || fetchAuthorByPhotoLoading) && loadingBox}
-      {removePhotoLoading && loadingBox}
-      {createPhotoLoading && loadingBox}
+      {fetchAllRecipesLoading && loadingBox}
+      {(fetchRecipesByAuthorLoading || fetchAuthorByRecipeLoading) && loadingBox}
+      {removeRecipeLoading && loadingBox}
+      {createRecipeLoading && loadingBox}
     </AppBar>
   );
 };
