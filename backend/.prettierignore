@@ -1,0 +1,6 @@
+node_modules
+.idea
+.git
+eslint.config.mjs
+nodemon.json
+tsconfig.json
