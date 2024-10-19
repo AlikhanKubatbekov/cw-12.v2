@@ -21,14 +21,14 @@ const Recipes = () => {
     case recipesData.length > 0:
       recipes = (
         <Grid container spacing={4} marginBottom="40px">
-          {recipesData.map((photo) => (
+          {recipesData.map((recipe) => (
             <RecipesItem
-              key={photo._id}
-              _id={photo._id}
-              author={photo.user.displayName}
-              authorId={photo.user._id}
-              title={photo.title}
-              image={photo.image}
+              key={recipe._id}
+              _id={recipe._id}
+              author={recipe.user.displayName}
+              authorId={recipe.user._id}
+              title={recipe.title}
+              image={recipe.image}
             />
           ))}
         </Grid>

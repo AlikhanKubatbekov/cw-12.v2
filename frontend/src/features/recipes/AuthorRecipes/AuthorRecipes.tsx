@@ -31,8 +31,8 @@ const AuthorRecipes = () => {
     case recipesByAuthor.length > 0 && id !== undefined:
       recipes = (
         <Grid container spacing={4} marginBottom="40px">
-          {recipesByAuthor.map((photo) => (
-            <AuthorRecipeItem key={photo._id} _id={photo._id} authorId={id} title={photo.title} image={photo.image} />
+          {recipesByAuthor.map((recipe) => (
+            <AuthorRecipeItem key={recipe._id} _id={recipe._id} authorId={id} title={recipe.title} image={recipe.image} />
           ))}
         </Grid>
       );
