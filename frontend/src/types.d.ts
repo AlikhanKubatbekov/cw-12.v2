@@ -44,10 +44,12 @@ export interface Recipe {
   _id: string;
   user: User;
   title: string;
+  recipe: string;
   image: string;
 }
 
 export interface RecipeMutation {
   title: string;
+  recipe: string;
   image: File | null;
 }
