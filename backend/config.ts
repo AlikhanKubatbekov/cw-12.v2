@@ -9,7 +9,7 @@ const config = {
   rootPath,
   publicPath: path.join(rootPath, 'public'),
   mongoose: {
-    db: 'mongodb://localhost/receipts',
+    db: 'mongodb://localhost/recipes',
   },
   google: {
     clientId: process.env.GOOGLE_CLIENT_ID,
